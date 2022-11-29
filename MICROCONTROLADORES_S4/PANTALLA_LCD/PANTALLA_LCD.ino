@@ -1,5 +1,5 @@
 #include <LiquidCrystal.h>
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int rs = A0, en = A1, d4 = A2, d5 = A3, d6 = A4, d7 = A5;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 String var = " ";   
 void setup() {

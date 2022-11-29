@@ -29,7 +29,7 @@ void loop() {
 
 
 
-  if(digitalRead(SOne) == HIGH ||(digitalRead(STwo) == HIGH && digitalRead(SThree) == HIGH) ){
+  if(digitalRead(SOne) == HIGH || (digitalRead(STwo) == HIGH && digitalRead(SThree) == HIGH) ){
     digitalWrite(ATwo,HIGH);
   }else{
     digitalWrite(ATwo,LOW);
