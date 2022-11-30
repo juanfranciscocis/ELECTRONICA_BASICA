@@ -181,58 +181,23 @@ void loop() {
     lcd.print(foodTime);
     lcd.print(" MIN ESPERE...");
     delay(foodTime*6000); //foodTime*60000
-    int serving = 12;
-    while (serving != (sensorToFloor-foodQuantity) ) {
-      serving = returnAltitud();
-      openDoor();
-      if (serving < (sensorToFloor-foodQuantity) ) {
-        break;
+    for(int i = 0; i<=3 ; i++){
+      int serving = 12;
+      while (serving != (sensorToFloor-foodQuantity) ) {
+        serving = returnAltitud();
+        openDoor();
+        if (serving < (sensorToFloor-foodQuantity) ) {
+          break;
+        }
       }
-    }
-    closeDoor();
 
-    serving = 12;
-    while (serving != (sensorToFloor-foodQuantity) ) {
-      serving = returnAltitud();
-      openDoor();
-      if (serving < (sensorToFloor-foodQuantity) ) {
-        break;
-      }
-    }
-    closeDoor();
-
-    serving = 12;
-    while (serving != (sensorToFloor-foodQuantity) ) {
-      serving = returnAltitud();
-      openDoor();
-      if (serving < (sensorToFloor-foodQuantity) ) {
-        break;
-      }
-    }
-    closeDoor();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
-
-    
+    closeDoor();      
+    }   
+  } 
 }
 
 int returnAltitud(){
   while(true){
-
-  
   digitalWrite(trigPin, LOW);
   delayMicroseconds(10);
   digitalWrite(trigPin, HIGH);
